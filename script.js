@@ -7,6 +7,23 @@ const portfolioItems = document.querySelectorAll(".portfolio-item");
 const skillProgressBars = document.querySelectorAll(".skill-progress");
 const contactForm = document.getElementById("contactForm");
 
+//send email
+
+function sendEmail() {
+  let params = {
+    name: document.getElementById("name").value,
+    email: document.getElementById("email").value,
+    subject: document.getElementById("subject").value,
+    message: document.getElementById("message").value,
+  };
+
+  emailjs
+    .send("service_z5tg1xj", "template_j6g1wnr", params)
+    .then(function (res) {
+      alert("Success! " + res.status);
+    });
+}
+
 //Project Links
 const projects = {
   Levites: {

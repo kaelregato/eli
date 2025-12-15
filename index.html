@@ -14,6 +14,17 @@
       rel="stylesheet"
     />
     <link rel="icon" type="image/x-icon" href="images/logo.png" />
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"
+    ></script>
+    <script type="text/javascript">
+      (function () {
+        emailjs.init({
+          publicKey: "8RUPFM47tzIeiyD1X",
+        });
+      })();
+    </script>
   </head>
   <body>
     <!-- Navigation -->
@@ -645,7 +656,11 @@
                   required
                 ></textarea>
               </div>
-              <button type="submit" class="btn btn-primary">
+              <button
+                type="submit"
+                class="btn btn-primary"
+                onclick="sendEmail(event)"
+              >
                 Send Message
               </button>
             </form>
